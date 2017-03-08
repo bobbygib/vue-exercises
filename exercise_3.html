@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!--
+
+		Exercise 3: "Live Calculator"
+		Write an application which has two input fields "a" and "b" and two output divs, "+" and "*"
+		Display the sum of "a" and "b" in the "+" output field
+		Display the product of "a" and "b" in the "*" output field
+		The output fields should update automatically when "a" or "b" are changed.
+
+	-->
+	<div id="num">
+		<input v-model="num1" placeholder="number">
+		<input v-model="num2" placeholder="number">
+		<p>
+			{{num1}} + {{num2}} = {{parseFloat(num1) + parseFloat(num2)}}
+		</p>
+		<p>
+			{{num1}} * {{num2}} = {{parseFloat(num1) * parseFloat(num2)}}
+		</p>
+		
+	</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script>
+		new Vue({
+			el: '#num',
+			data: {
+				num1: "",
+				num2: ""
+			},
+			methods: {
+			}
+		});
+	</script>
+</body>
+</html>

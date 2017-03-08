@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!--
+
+		Exercise 1: "Hello!"
+		Write an application which has an input field for the user's name, and displays "Hello, (user's name)" in giant letters below the input field.
+
+	-->
+	<div id="app">
+    <input v-model="message">
+    <button v-on:click="postMessage">Enter Name</button>
+    <div v-for="msg of messages">
+    	<h1>HELLO, {{msg}}
+      </h1>
+    </div>
+  </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: "",
+          messages: []
+      	},
+        methods: {
+          postMessage: function() {
+            this.messages.push(this.message.toUpperCase());
+            this.message = "";
+          }
+        }
+      });
+        </script>
+	</script>
+</body>
+</html>
